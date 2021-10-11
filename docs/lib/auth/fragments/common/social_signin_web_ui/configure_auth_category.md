@@ -1,7 +1,3 @@
-<amplify-callout>
-Sign in with Apple is not yet added to the CLI, follow the steps below to enable it.
-</amplify-callout>
-
 Once finished, run `amplify push` to publish your changes. Once finished, it will display an auto generated URL for your web UI.
 
 You need to now inform your auth provider of this URL:
@@ -41,27 +37,16 @@ You need to now inform your auth provider of this URL:
 </amplify-block>
 <amplify-block name="Google Sign-In">
 
-1. Go to [Google Developer Console](https://developers.google.com/identity/sign-in/web/sign-in)
-2. Click *CONFIGURE A PROJECT*
-![Image](~/images/cognitoHostedUI/google1.png)
-3. Type in a project name and choose *NEXT*.
-![Image](~/images/cognitoHostedUI/google2.png)
-4. Type in your product name and choose *NEXT*.
-5. Choose *Web browser* from the *Where are you calling from?* drop-down list.
-![Image](~/images/cognitoHostedUI/google3.png)
-6. Click *CREATE*. You will NOT use the *Client ID* and *Client Secret* from this step.
-7. Click Done.
-8. Go to the [Google developer console](https://console.developers.google.com).
-9. On the left navigation bar, choose *Credentials*.
-![Image](~/images/cognitoHostedUI/google5.png)
-10. Select the client you created in the first step and choose the edit option.
-11. Type your user pool domain into Authorized Javascript origins.
-12. Type your user pool domain with the `/oauth2/idpresponse` endpoint into *Authorized Redirect URIs*.
+1. Go to the [Google developer console](https://console.developers.google.com).
+2. On the left navigation bar, choose *Credentials*.
+3. Select the client you created in the first step and click the edit button.
+4. Type your user pool domain into Authorized Javascript origins.
+5. Type your user pool domain with the `/oauth2/idpresponse` endpoint into *Authorized Redirect URIs*.
 
-    ![Image](~/images/cognitoHostedUI/google7.png)
+    ![Image](~/images/cognitoHostedUI/google8.png)
 
     Note: If you saw an error message `Invalid Redirect: domain must be added to the authorized domains list before submitting.` when adding the endpoint, please go to the *authorized domains list* and add the domain.
-13. Click *Save*.
+6. Click *Save*.
 
 </amplify-block>
 <amplify-block name="Login with Amazon">
@@ -97,14 +82,6 @@ You need to now inform your auth provider of this URL:
 17. On **Register a New Key** click **Continue**, review the information, then select **Register**.
 18. On the page you are redirected to take note of the Key ID and download the .p8 file containing the private key.
 ![Image](~/images/cognitoHostedUI/apple5.png)
-
-### Amazon Cognito User pool setup
-1. In your terminal type `amplify auth console` and select `User Pool` to open the AWS console for the Amazon Cognito User Pool.
-2. Under Federation, under the Identity providers tab, select Sign in with Apple.
-3. Provide the Apple Services ID, Team ID, Key ID, and the downloaded private key for the Sign in with Apple application along with the desired scopes.
-4. Select the Attribute mapping tab, and then select the Apple tab.
-5. Select the checkboxes under Capture next to the Apple attributes, and select the user pool attribute under User pool attribute that will receive the value from the Apple attribute and that you would like to receive in the tokens from Amazon Cognito.
-6. To enable your app client to allow federation through the Sign in with Apple IdP, under App Integration, select App client settings, find the App client that you want to allow Sign in with Apple, and select the Sign in with Apple check box.
 
 </amplify-block>
 </amplify-block-switcher>
